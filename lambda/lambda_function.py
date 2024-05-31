@@ -1,6 +1,7 @@
 import os
 import logging
 import ask_sdk_core.utils as ask_utils
+from dotenv import load_dotenv
 
 from ask_sdk_core.skill_builder import SkillBuilder
 from ask_sdk_core.dispatch_components import AbstractRequestHandler
@@ -14,7 +15,7 @@ from openai import OpenAI
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-openai_api_key = "sk-alexa-CVVLA4pFwFH8aoXj7bdiT3BlbkFJJCU70I8gLllJpC13JSg1"
+openai_api_key = os.getenv('OPEN_API_KEY')
 
 client = OpenAI(api_key=openai_api_key)
 
